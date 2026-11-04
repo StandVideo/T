@@ -1,5 +1,5 @@
 /*
-    afterglow -- PlayStation 4 kernel exploit for firmware 14.00
+    afterglow -- PlayStation 4 kernel exploit for firmware 14.02
     Port to the raw13 host (WebKit entry), from the Lua original.
 
     Copyright (C) 2026
@@ -42,7 +42,7 @@ const S = {
   cpuset_setaffinity: 488, dynlib_get_list: 592, dynlib_get_info: 593,
 };
 
-/* offsets into the kernel image, firmware 14.00 */
+/* offsets into the kernel image, firmware 14.02 */
 const K = {
   anchor:    0x00e6c60,   /* the lock the leak hands us */
   swap_rbp:  0x0a80f68,   /* xchg rbp,rax ; ret */
@@ -1540,7 +1540,7 @@ async function attempt(ctx, opts) {
   STATE.ctx = ctx;
   opts = opts || {};
   STATE.retry = false;
-  say("afterglow -- ps4 kernel exploit, firmware 14.00 (raw13 host)");
+  say("afterglow -- ps4 kernel exploit, firmware 14.02 (raw13 host)");
 
   const missing = seedStubs();
   if (missing.length) {
